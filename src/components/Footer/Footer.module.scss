@@ -1,0 +1,150 @@
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color3);
+    
+    .offers {
+        display: flex;
+        flex-direction: row;
+        background-color: var(--color1);
+
+        border-radius: 20px;
+        align-items: center;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 200px);
+        height: 180px;
+        margin: auto;
+       
+        transform: translateY(-50%);
+
+        h1{
+            margin-left: 64px;
+            font-size: 40px;
+            color: var(--color2);
+        }
+
+        .formOfers{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-right: 64px;
+
+            input{
+                width: 348px;
+                height: 48px;
+                border-radius: 62px;
+                font-size: 16px;
+                border: 0 ;
+                margin-bottom: 14px;
+            }
+
+            button{
+                width: 348px;
+                height: 46px;
+                border-radius: 62px;
+                border: 0;
+            }
+        }
+    }
+
+    .footerInfo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 200px);
+        margin: auto;
+        margin-bottom: 50px;
+
+        .footerBox1{
+            display: flex;
+            flex-direction: column;
+            height: 178px;
+
+            h1{
+                font-size: 34px;
+            }
+
+            p{
+                font-size: 16px;
+                font-family: 'Satoshi';
+                color: #727272;
+            }
+        
+            .social{
+                display: flex;
+                justify-content: space-between;
+                width: 148px;
+                margin-top: 26px;
+            }
+
+        }
+
+        .footerBox{
+            display: flex;
+            flex-direction: column;
+            height: 178px;
+        
+            h2{
+                font-size: 14px;
+                font-family: 'Satoshi';
+                letter-spacing: 1px;
+                font-weight: 500;
+            }
+            
+            p{
+                font-size: 16px;
+                font-family: 'Satoshi';
+                color: #727272;
+                margin-top: 14px;
+            }
+        
+        }
+        
+    }
+
+    .divider{
+        width: calc(100% - 200px);
+        height: 2px;
+        background-color: #d9d9d9;
+        margin: auto;
+    }
+
+    .payment{
+        width: 100%;
+        background-color: var(--color3);
+
+        
+        .payment2{
+            display: flex;
+            flex-direction: rox;
+            justify-content: space-between;
+            width: calc(100% - 200px);
+            margin: auto;
+            align-items: center;
+            margin-top: 26px;
+            margin-bottom: 88px;
+
+            p{
+                font-size: 14px;
+                font-family: 'Satoshi';
+                color: #727272;
+            }
+
+            .social3{
+                display: flex;
+                justify-content: space-between;
+                width: 282px;
+
+                img{
+                    width: 46px;
+                    height: 30px;
+                }
+            }
+
+        }
+    }
+}

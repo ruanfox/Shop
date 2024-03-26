@@ -1,0 +1,112 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin: 24px 100px;
+
+    h1{
+        font-size: 32px;
+    }
+
+    .busca{
+        display: flex;
+        flex-direction: row;
+        width: 322px;
+        justify-content: space-between;
+
+        .shop{
+            display: flex;
+            flex-direction: row;
+        }
+
+        p{
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 400;
+
+            &.selected {
+                font-weight: 600; // Peso para quando está selecionado
+            }
+        }
+        
+        .vector{
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+    }
+
+    .input{
+        position: relative;
+        display: inline-block;
+
+        .search{
+            height: 48px;
+            width: 578px;
+            border-radius: 62px;
+            border: none;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: var(--color3);
+            padding-left: 48px;
+            
+        }
+    
+        .button{
+            position: absolute;
+            left: 16px;
+            top: 45%;
+            transform: translateY(-45%); 
+            background-color: transparent; 
+            border: none;
+            cursor: pointer;
+        
+
+            .searchimg{
+                color: #909090;
+                height: 24px;
+                width: 24px;
+            }
+            
+        }
+    }
+
+    .shoppingUser{
+        display: flex;
+        flex-direction: row;
+        width: 62px;
+        justify-content: space-between;
+
+        .shopping{
+
+            button{
+                border: none;
+                border-radius: 100%;
+                background-color: white;
+                cursor: pointer;
+
+                .shoppingCart{
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+
+        .user{
+            button{
+                border: none;
+                border-radius: 100%;
+                background-color: white;
+                cursor: pointer;
+
+                .userCircle{
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+}

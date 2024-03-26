@@ -1,0 +1,68 @@
+.style{
+    height: 54rem;
+    margin: 0 6.2rem;
+    background-color: var(--color3);
+    border-radius: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 64px;
+    margin-top: 5rem;
+
+    h1{
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 4.3rem;
+        margin-bottom: 4rem;
+    }
+
+    .part1, .part2 {
+        display: flex;
+        justify-content: space-between;
+        width: 100%; 
+        margin: 10px 0; 
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        > *:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    h2{
+        margin-top: 1.5rem;
+        margin-left: 2.2rem;
+        font-size: 2.2rem;
+        font-size: 'Integral CF';
+    }
+    
+    .casual {
+        width: 25.5rem;
+        height: 18rem;
+        background-image: url("./image/imagecasual.svg");
+        border-radius: 1.3rem;
+    }
+
+    .formal {
+        width: 42.7rem;
+        height: 18rem;
+        background-image: url("./image/imageformal.svg");
+        border-radius: 1.3rem;
+    }
+
+    .party {
+        width: 42.7rem;
+        height: 18rem;
+        background-image: url("./image/imageparty.svg");
+        border-radius: 1.3rem;
+    }
+
+    .gym {
+        width: 25.5rem;
+        height: 18rem;
+        background-image: url("./image/imagegym.svg");
+        border-radius: 1.3rem;
+    }
+}

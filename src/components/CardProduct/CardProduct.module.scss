@@ -1,0 +1,58 @@
+.CardProdutcs{
+    height: 25.5rem;
+    width: 17.4rem;
+
+    .backgroundImage{
+        width: 17.4rem;
+        height: 18.6rem;
+
+        justify-content: center;
+
+        border-radius: 1.2rem;
+
+        background-color: var(--color4 );
+
+        img{
+            width: 17.4rem;
+            height: 18.6rem;   
+
+            border-radius: 1.2rem;
+        }
+    }
+
+    .infos{
+
+        .nameProduct{
+            font-family: 'Satoshi';
+            font-size: 1.2rem;
+            font-weight: bold;
+
+            margin-top: 1rem;
+        }
+
+        .nota{
+            display: flex;
+            flex-direction: row;
+            margin: auto 0;
+
+            .star{
+                margin-top: 0.6rem;
+                color: #FFC633;
+                margin: auto 0;
+                margin-right: 0.3rem;
+            }
+
+            p{
+                font-size: 0.9rem;
+            }
+        }
+
+        .valorProduct{
+            font-family: 'Satoshi';
+            font-size: 1.5rem;
+            font-weight: bold;
+
+            margin-top: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+
+:root {
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color1: #000000;
+  --color2: #ffffff;
+  --color3: #F2F0F1;
+  --color4: #F0EEED;
+  --color5: #FF3333;
+}
+

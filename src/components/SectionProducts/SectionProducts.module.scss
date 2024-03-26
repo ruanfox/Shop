@@ -1,0 +1,30 @@
+.SectionProducts{
+    display: flex;
+    flex-direction: column;
+    
+    h1{
+        font-size: 48px;
+        margin: 0 auto;
+        margin-top: 4.5rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .productsNewarrivals{
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        
+        margin: 0 6.2rem;
+    }
+
+    Button{
+        width: 218px;
+        height: 52px;
+        border: 1px solid var(--color3);
+        background-color: var(--colo2);
+        color: var(--color);
+
+        margin: 0 auto;
+        margin-top: 2.2rem;
+    }
+}

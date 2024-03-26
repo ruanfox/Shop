@@ -1,0 +1,23 @@
+.sign{
+    width: 100%;
+    background-color: var(--color1);
+    color: var(--color2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 14px;
+
+    p{
+        
+        button{
+            text-decoration: underline;
+            background-color: transparent;
+            border: 0;
+            color: var(--color2);
+
+
+            cursor: pointer;
+        }
+    }
+}
