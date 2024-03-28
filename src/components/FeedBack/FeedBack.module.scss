@@ -1,0 +1,27 @@
+.feedback{
+    margin: 5rem 6.2rem;
+    margin-bottom: 5rem;
+
+    .titlePage{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.5rem;
+
+        h1{
+            font-size: 3rem;
+        }
+
+        .pagina{
+            display: flex;
+            justify-content: space-between;
+            width: 4rem;
+
+            .arrow{
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+    }
+
+}

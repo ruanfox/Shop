@@ -5,10 +5,14 @@ import { PiShoppingCartSimpleBold } from "react-icons/pi";
 import { LuUserCircle2 } from "react-icons/lu";
 
 import Vector from "./image/Vector.svg";
+import { useState } from "react";
+
 
 export function Header() {
-    const handleClick = () => {
-        console.log('O item está à venda!');
+    const [SelectItem, setSelectItem] = useState('');
+
+    const handleClick = (item: string) => {
+        setSelectItem(item)
     };
 
     return(
@@ -19,13 +23,13 @@ export function Header() {
                 <p>Shop</p>
                 <img className={styles.vector} src={Vector} alt="image vector" />
                 </div>
-                <p onClick={handleClick}>On Sale</p>
-                <p>New Arrivals</p>
-                <p>Brands</p>
+                <p className={SelectItem === 'On Sale' ? styles.selected : ''} onClick={() => handleClick('On Sale')}>On Sale</p>
+                <p className={SelectItem === 'New Arrivals' ? styles.selected : ''} onClick={() => handleClick('New Arrivals')}>New Arrivals</p>
+                <p className={SelectItem === 'Brands'? styles.selected : ''} onClick={() => handleClick('Brands')}>Brands</p>
             </div>
 
             <form className={styles.input}>
-                <input type="text" className={styles.search} placeholder="Search for products..." />
+                <input type="text" className={styles.search} placeholder="Search for products..." id="searchInput"/>
                 <button type="submit" className={styles.button}><IoSearch className={styles.searchimg} /></button>
             </form>
 

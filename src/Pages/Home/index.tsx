@@ -1,24 +1,18 @@
 import styles from "./Home.module.scss";
 
-import { Button } from "../../components/Button";
+
 import { SectionProdutcs } from "../../components/SectionProducts";
 
-import { FaArrowRight } from "react-icons/fa";
-import { FaArrowLeft } from "react-icons/fa";
-
-
-import versace from "./image/versace.svg"
-import zara from "./image/zara.svg"
-import gucci from "./image/gucci.svg"
-import prada from "./image/prada.svg"
-import calvinKlein from "./image/kalvinklein.svg"
 
 import productImage1 from "./image/productImage1.svg"
 import productImage2 from "./image/productImage2.svg"
 import productImage3 from "./image/productImage3.svg"
 import productImage4 from "./image/productImage4.svg"
+
 import { StyleProducts } from "../../components/StyleProducts";
-import { CardFeedback } from "../../components/CardFeedback";
+import { FilterBrands } from "../../components/FilterBrands";
+import { Mural } from "../../components/Mural";
+import { FeedBack } from "../../components/FeedBack";
 
 
 export function Home(){
@@ -51,44 +45,17 @@ export function Home(){
 
     return(
         <div className={styles.home}>
-            <section className={styles.mural}>
-                <div className={styles.info}>
-                    <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
-                    <p>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
-                    <Button text="Shop Now"/>
-                    <div className={styles.quant}>
-                        <div>
-                            <h2>200+</h2>
-                            <p>International Brands</p>
-                        </div>
-                        <div className={styles.divisoria}></div>
-                        <div>
-                            <h2>2,000+</h2>
-                            <p>High-Quality Products</p>
-                        </div>
-                        <div className={styles.divisoria}></div>
-                        <div>
-                            <h2>30,000+</h2>
-                            <p>Happy Customers</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <section className={styles.marcas}>
-                <div  className={styles.marcas1}>
-                    <img src={versace} alt="" />
-                    <img src={zara} alt="" />
-                    <img src={gucci} alt="" />
-                    <img src={prada} alt="" />
-                    <img src={calvinKlein} alt="" />
-                </div>
-            </section>
+            <Mural />
+
+            <FilterBrands />
 
             <SectionProdutcs
                 title="NEW ARRIVALS"
                 products={newArrivals}
             />
+
+            <div className={styles.divider}></div>
 
             <SectionProdutcs 
                 title="TOP SELLING"
@@ -97,18 +64,8 @@ export function Home(){
 
             <StyleProducts />
 
-            <section className={styles.feedback}>
-                <div className={styles.titlePage}>
-                    <h1>OUR HAPPY CUSTOMERS</h1>
-                    <div className={styles.pagina}>
-                        <FaArrowLeft className={styles.arrow}/>
-                        <FaArrowRight className={styles.arrow}/>
-                    </div>
-                </div>
+            <FeedBack />
 
-                <CardFeedback />
-                
-            </section>
         </div>
     )
 }
