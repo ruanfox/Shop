@@ -13,9 +13,15 @@ import { StyleProducts } from "../../components/StyleProducts";
 import { FilterBrands } from "../../components/FilterBrands";
 import { Mural } from "../../components/Mural";
 import { FeedBack } from "../../components/FeedBack";
+import { Divisor } from "../../components/Divider";
+
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 
 export function Home(){
+    const [Product, setProducts] = useState([]);
+
     const newArrivals = [
         {
             image: productImage1,
@@ -43,29 +49,48 @@ export function Home(){
         }
     ];
 
+    useEffect(() => {
+        axios
+        .get("https://dummyjson.com/products")
+        .then((response) => setProducts(response.data))
+        .catch((error) => console.log(error))
+        .finally(console.log);
+    }, [])
+
+    console.log(Product, "Product")
+
+    console.log(Product)
+
     return(
-        <div className={styles.home}>
+
+        <main className={styles.home}>
 
             <Mural />
 
             <FilterBrands />
 
-            <SectionProdutcs
-                title="NEW ARRIVALS"
-                products={newArrivals}
-            />
+            <div className={styles.containerMargin}>
+                <SectionProdutcs
+                    title="NEW ARRIVALS"
+                    products={newArrivals}
+                />
+            </div>
+            
+            <div className={styles.divider}>
+                <Divisor />
+            </div>
 
-            <div className={styles.divider}></div>
-
-            <SectionProdutcs 
-                title="TOP SELLING"
-                products={newArrivals}
-            />
+            <div className={styles.containerMargin}>
+                <SectionProdutcs 
+                    title="TOP SELLING"
+                    products={newArrivals}
+                />
+            </div>
 
             <StyleProducts />
 
             <FeedBack />
 
-        </div>
+        </main>
     )
 }

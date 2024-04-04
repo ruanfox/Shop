@@ -9,6 +9,7 @@
     padding: 0 64px;
     margin-top: 5rem;
 
+
     h1{
         font-size: 3rem;
         font-weight: bold;
@@ -28,6 +29,10 @@
 
         > *:not(:last-child) {
             margin-right: 20px;
+        }
+
+        div{
+            cursor: pointer;
         }
     }
 

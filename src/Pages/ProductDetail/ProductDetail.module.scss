@@ -1,0 +1,294 @@
+.productDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 6.2rem;
+    
+    
+    .reoutesPages{
+        display: flex;
+        flex-direction: row;
+        gap: 0.7rem;
+        margin-top: 1.5rem;
+        margin-bottom: 2.2rem;
+
+        .routes{
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+
+            p{
+                font-size: 1rem;
+                font-family: 'Satoshi';
+                color: #9F9F9F;
+            }
+            
+            .arrow{
+                color: #9F9F9F;
+                height: 1rem;
+                width: 1rem;
+            }
+        }
+    }
+
+    .product{
+        display: flex;
+
+        .secondary{
+            margin-right: 0.8rem;
+
+            .ImgProduct{
+                height: 10.4rem;
+                width: 9.5rem;
+                background-color: #F0EEED;
+                border-radius: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+        }
+
+        .mainImg{
+            height: 33.1rem;
+            width: 27.7rem;
+            background-color: #F0EEED;
+            border-radius: 1.2rem;
+            margin-right: 2.5rem;
+        }
+        
+        .descriptionProduct{
+            width: 33.5rem;
+
+            h1{
+                font-size: 2.5rem;
+                line-height: 2.5rem;
+            }
+
+            p{
+                font-size: 1rem;
+                font-family: 'Satoshi';
+                color: #666666;
+            }
+
+            h2{
+                font-size: 1rem;
+                line-height: 1rem;
+                font-family: 'Satoshi';
+                color: #666666;
+                font-weight: normal;
+            }
+
+            .evaluention{
+                display: flex;
+                gap: 0.4rem;
+                align-items: center;
+                margin: 0.8rem 0;
+
+                .star{
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    color: #FFC633;
+                }
+            }
+
+            .value{
+                margin-bottom: 1.2rem;
+
+                p{
+                    font-size: 2rem;
+                    line-height: 2rem;
+                    font-weight: bold;
+                    color: var(--color1);
+                }
+            }
+
+            .description{
+                margin-bottom: 1rem;
+            }
+
+            .selectColor{
+                margin: 1.5rem 0;
+                div{
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    border-radius: 100%;
+                }
+
+                h2{
+                    margin-bottom: 1rem;
+                }
+
+                .color{
+                    display: flex;
+                    width: 100%;
+                    gap: 1rem;
+
+                    .color1{
+                        background-color: #4F4631;
+                    }
+    
+                    .color2{
+                        background-color: #314F4A;
+                    }
+    
+                    .color3{
+                        background-color: #31344F;
+                    }
+                }
+            }
+
+            .chooseSize{
+                margin: 1.5rem 0;
+
+                h2{
+                    margin-bottom: 1rem;
+                }
+
+                button{
+                    font-size: 16px;
+                    font-family: 'Satoshi';
+                    padding: 0.7rem 1.5rem;
+                    background-color: var(--color4);
+                    border: none;
+                    border-radius: 3.8rem;
+                    margin-right: 0.7rem;
+                }
+            }
+
+            .cart{
+                display: flex;
+                gap: 1.2rem;
+                margin-top: 1.5rem;
+
+                .quantidadeProduto{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 10.6rem;
+                    height: 3.2rem;
+                    background-color: var(--color4);
+                    border-radius: 3.8rem;
+
+                    p{
+                       margin: 0 2.3rem;
+                    }
+
+                    button{
+                        border: none;
+                    }
+                    .quant{
+                        height: 1.5rem;
+                        width: 1.5rem;
+                    }
+                }
+
+                .addCart{
+                    width: 25rem;
+                    height: 3.2rem;
+                    border: none;
+                    border-radius: 3.8rem;
+                    color: var(--color2);
+                    background-color: var(--color1);
+                    font-size: 1rem;
+                    font-family: 'Satoshi';
+                }
+            }
+        }
+    }
+
+    .options{
+        display: flex;
+        justify-content: center;
+        gap: 16.8rem;
+        margin-bottom: 1.5rem;
+        margin-top: 5rem;
+
+        p{
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            font-family: 'Satoshi';
+            color: #666666;
+        }
+    }
+
+    .informations{
+        .header{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+    
+            .title{
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                h2{
+                    font-size: 1.5rem;
+                }
+                p{
+                    font-size: 1rem;
+                    color: #666666;
+                }
+            }
+    
+            .filters{
+    
+                .adjustments{
+                    height: 3rem;
+                    width: 3rem;
+                    border-radius: 100%;
+                    border: none;
+                    background-color: var(--color4);
+                    margin-right: 0.6rem;
+                }
+                
+                .latest{
+                    padding: 0.8rem 1.2rem;
+                    border: none;
+                    border-radius: 3.8rem;
+                    font-size: 1rem;
+                    margin-right: 0.6rem;
+                    
+                   .arrow{
+                        margin-left: 1.3rem;
+                    }
+                }
+    
+                .review{
+                    padding: 0.8rem 1.8rem;
+                    background-color: var(--color1);
+                    border: 0;
+                    color: var(--color2);
+                    font-size: 1rem;
+                    border-radius: 3.8rem;
+                }
+            }
+        }
+
+        .render{
+            margin-top: 1.5rem;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        .LoadReviews{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 2.2rem;
+            margin-bottom: 4rem;
+
+            .loadReviews{           
+                padding: 0.9rem 2.8rem;
+                border: 1px solid var(--color4);
+                background-color: var(--color2);
+                color: var(--color1);
+                font-size: 1rem;
+                font-family: 'Satoshi';
+                border-radius: 3.8rem;
+                
+            }
+        }
+
+    }
+    
+}

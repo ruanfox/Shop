@@ -1,0 +1,63 @@
+.ProductReview{
+    width: 31.1rem;
+    padding: 1.7rem 2rem;
+    border: 1px solid #F0F0F0;
+    border-radius: 1.2rem;
+
+    div{
+        display: flex;
+    }
+
+    .evaluation{
+        display: flex;
+        justify-content: space-between;
+
+        .containerStar{
+            color: #FFC633;
+    
+            .star{
+                margin-right: 0.4rem;
+                height: 1.4rem;
+                width: 1.4rem;
+            }
+        }
+    }
+    
+    .name{
+        align-items: center;
+        margin-top: 0.9rem;
+
+        .check{
+            width: 1.2rem;
+            height: 1.2rem;
+
+            margin-left: 0.2rem;
+
+            color: #01AB31;
+        }
+    }
+
+
+    h2{
+        font-size: 1.2rem;
+        font-family: 'Satoshi';
+    }
+
+    .comment{
+        margin-top: 0.7rem;
+        p{
+            font-size: 1rem;
+            font-family: 'Satoshi';
+            color: #969696;
+        }
+    }
+
+    .date{
+        margin-top: 1.5rem;
+        p{
+            font-size: 1rem;
+            font-family: 'Satoshi';
+            color: #666666;
+        }
+    }
+}

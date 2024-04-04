@@ -1,0 +1,169 @@
+.Filters{
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    width: 18.4rem;
+    align-items: center;
+    border: 1px solid #F3F3F3;
+    border-radius: 1.2rem;
+
+    h2{
+        font-size: 1.2rem;
+        font-family: 'Satoshi';
+    }
+
+    p{
+        font-size: 1rem;
+        font-family: 'Satoshi';
+        color: #969696;
+        margin-bottom: 1.2rem;
+    }
+
+    .divider{
+        margin-top: 1.5rem;
+        margin-bottom: 1;
+    }
+
+    .title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div{
+        width: 15.4rem;
+    }
+
+    .filters{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .model{
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        div{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    .price{
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .colors{
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        .title{
+            width: 15.4rem;
+            background-color: white;
+            align-items: center;
+            border: 0;
+            margin-bottom: 1.2rem;
+        }
+
+        .colors1{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            div{
+                width: 2.3rem;
+                height: 2.3rem;
+                border-radius: 100%;
+                border: 2px solid #F3F3F3;
+            }
+        }
+        
+        .colors2{
+            display: flex;
+            justify-content: space-between;
+
+            div{
+                width: 2.3rem;
+                height: 2.3rem;
+                border-radius: 100%;
+                border: 2px solid #F3F3F3;
+            }
+    
+        }
+
+        .green{
+            background-color: #00C12B;
+        }
+
+        .red{
+            background-color: #F50606;
+        }
+
+        .yellow{
+           background-color: #F5DD06;
+        }
+
+        .orange{
+            background-color: #F5DD06;
+        }
+
+        .babyBlue{
+            background-color: #06CAF5;
+        }
+
+        .blue{
+            background-color: #063AF5;
+        }
+
+        .purple{
+            background-color: #7D06F5;
+        }
+
+        .pink{
+            background-color: #F506A4;
+        }
+
+        .white{
+            background-color: #FFFFFF;
+        }
+
+        .black{
+            background-color: #000000;
+        }
+    }
+
+    .size{
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        button{
+            padding: 0.6rem  1.2rem ;
+            color: #A8A8A8;
+            background-color: #F3F3F3;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+        }
+    }
+
+    .dressStyle{
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        .title{
+            margin-bottom: 1.2rem;
+        }
+
+        div{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    button{
+        padding: 0.9rem 5.4rem;
+        margin-bottom: 1.8rem;
+    }
+}
