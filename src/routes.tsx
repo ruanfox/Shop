@@ -11,7 +11,7 @@ export function AppRouters(){
             <Routes>
                 <Route path="/" element={<PageBase />}>
                     <Route index element={<Home />}></Route>
-                    <Route path="categoryPage" element={<CategoryPage />}></Route>
+                    <Route path="Pages/CategoryPage" element={<CategoryPage />}></Route>
                     <Route path="productDetail" element={<ProductDetail />}></Route>
                     <Route path="renderCart" element={<RenderCart />}></Route>
                 </Route>

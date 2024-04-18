@@ -6,6 +6,7 @@ import { LuUserCircle2 } from "react-icons/lu";
 
 import Vector from "./image/Vector.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export function Header() {
@@ -17,7 +18,7 @@ export function Header() {
 
     return(
         <div className={styles.header}>
-            <h1>Shop.co</h1>
+            <Link to="/" className={styles.links}><h1>Shop.co</h1></Link>
             <div className={styles.busca}>
                 <div className={styles.shop}>
                 <p>Shop</p>
@@ -36,7 +37,7 @@ export function Header() {
             <div className={styles.shoppingUser}>
                 <div className={styles.shopping}>
                     <button>
-                        <PiShoppingCartSimpleBold className={styles.shoppingCart}/>
+                        <Link to="/renderCart" className={styles.links}><PiShoppingCartSimpleBold className={styles.shoppingCart}/></Link>
                     </button>
                 </div>
                 <div className={styles.user}>
