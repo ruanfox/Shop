@@ -1,0 +1,26 @@
+.size{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    .selected{
+        background-color: black;
+        color: #F3F3F3;
+    }
+    
+    .title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.2rem;
+    }
+    
+    button{
+        padding: 0.6rem  1.2rem ;
+        color: #A8A8A8;
+        background-color: #F3F3F3;
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+    }
+}

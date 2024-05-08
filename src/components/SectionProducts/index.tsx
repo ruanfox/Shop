@@ -9,6 +9,7 @@ interface ProductInfo {
     valor: number;
     nota: number;
 }
+
 interface SectionProductsProps{
     title:string,
     products: ProductInfo[];

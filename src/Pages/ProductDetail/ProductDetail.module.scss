@@ -121,25 +121,24 @@
                     width: 100%;
                     gap: 1rem;
 
-                    .color1{
-                        background-color: #4F4631;
-                    }
-    
-                    .color2{
-                        background-color: #314F4A;
-                    }
-    
-                    .color3{
-                        background-color: #31344F;
+                    .selectedColor{
+                        background-image: url('./image/Frame.svg');
+                        background-repeat: no-repeat;
+                        background-position: center;
                     }
                 }
             }
 
             .chooseSize{
                 margin: 1.5rem 0;
-
+                
                 h2{
                     margin-bottom: 1rem;
+                }
+
+                .selected{
+                    background-color: black;
+                    color: #F3F3F3;
                 }
 
                 button{
@@ -147,6 +146,7 @@
                     font-family: 'Satoshi';
                     padding: 0.7rem 1.5rem;
                     background-color: var(--color4);
+                    color:#666666;
                     border: none;
                     border-radius: 3.8rem;
                     margin-right: 0.7rem;
@@ -189,6 +189,7 @@
                     background-color: var(--color1);
                     font-size: 1rem;
                     font-family: 'Satoshi';
+                    cursor: pointer;
                 }
             }
         }
@@ -207,6 +208,7 @@
             font-family: 'Satoshi';
             color: #666666;
         }
+        
     }
 
     .informations{

@@ -1,0 +1,13 @@
+.price{
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    height: 5.6;
+    .title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.2rem;
+        
+    }
+}

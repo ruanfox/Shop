@@ -5,6 +5,7 @@
     justify-content: space-between;
     align-items: center;
     
+    
     margin: 24px 100px;
 
     .links{
@@ -86,6 +87,22 @@
         justify-content: space-between;
 
         .shopping{
+
+            p{
+                position: absolute;
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 100%;
+                text-align: center;
+                background-color: #FF3333;
+                color: white;
+                margin-left: 1rem;
+                transform: translateY(-50%);   
+            }
+
+            .cartTransparent{
+                display: none;
+            }
 
             button{
                 border: none;

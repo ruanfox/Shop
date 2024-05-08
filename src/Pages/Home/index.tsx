@@ -15,52 +15,35 @@ import { Mural } from "../../components/Mural";
 import { FeedBack } from "../../components/FeedBack";
 import { Divisor } from "../../components/Divider";
 
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-
 export function Home(){
-    const [Product, setProducts] = useState([]);
 
     const newArrivals = [
         {
             image: productImage1,
             name: "Product 1",
-            valor: 10,
+            valor: 10000,
             nota: 4.5
         },
         {
             image: productImage2,
             name: "Product 2",
-            valor: 20,
+            valor: 20000,
             nota: 4.2
         },
         {
             image: productImage3,
             name: "Product 3",
-            valor: 15,
+            valor: 15000,
             nota: 4.7
         },
         {
             image: productImage4,
             name: "Product 4",
-            valor: 25,
+            valor: 25000,
             nota: 4.8
         }
     ];
-
-    useEffect(() => {
-        axios
-        .get("https://dummyjson.com/products")
-        .then((response) => setProducts(response.data))
-        .catch((error) => console.log(error))
-        .finally(console.log);
-    }, [])
-
-    console.log(Product, "Product")
-
-    console.log(Product)
-
+    
     return(
 
         <main className={styles.home}>

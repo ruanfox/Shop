@@ -5,12 +5,14 @@ import { PiShoppingCartSimpleBold } from "react-icons/pi";
 import { LuUserCircle2 } from "react-icons/lu";
 
 import Vector from "./image/Vector.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { TypeContext } from "../../context/TypeProvider";
 
 
 export function Header() {
     const [SelectItem, setSelectItem] = useState('');
+    const { productCart } = useContext(TypeContext)
 
     const handleClick = (item: string) => {
         setSelectItem(item)
@@ -36,6 +38,9 @@ export function Header() {
 
             <div className={styles.shoppingUser}>
                 <div className={styles.shopping}>
+                    <p className={productCart === 0 ? styles.cartTransparent: ''}>
+                        {productCart}
+                    </p>
                     <button>
                         <Link to="/renderCart" className={styles.links}><PiShoppingCartSimpleBold className={styles.shoppingCart}/></Link>
                     </button>

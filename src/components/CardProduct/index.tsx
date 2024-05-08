@@ -1,3 +1,4 @@
+import { ConversionReal } from "../../utils/conversion-real";
 import styles from "./CardProduct.module.scss";
 
 import { LiaStarSolid } from "react-icons/lia";
@@ -7,12 +8,17 @@ interface CardProdutcsProps{
     nameProduct:string,
     valorProduct:number;
     nota:number;
-    
+    onClick?: () => void;
 }
 
-export function CardProdutcs({imageProduct, nameProduct, valorProduct,nota}: CardProdutcsProps){
+export function CardProdutcs({imageProduct, nameProduct, valorProduct,nota , onClick}: CardProdutcsProps){
+    const valorInReais = ConversionReal(valorProduct);
+
     return(
-        <div className={styles.CardProdutcs}>
+        <div 
+            className={styles.CardProdutcs}
+            onClick={onClick}
+            >
             <div className={styles.backgroundImage}>
                 <img src={imageProduct} alt="image products" />
             </div>
@@ -22,7 +28,7 @@ export function CardProdutcs({imageProduct, nameProduct, valorProduct,nota}: Car
                     <LiaStarSolid className={styles.star} /> 
                     <p>{nota}/5</p>
                 </div>
-                <p className={styles.valorProduct}>${valorProduct}</p>
+                <p className={styles.valorProduct}>${valorInReais}</p>
             </div>
         </div>
     )

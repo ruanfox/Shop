@@ -1,0 +1,24 @@
+.clothing {
+    margin-top: 1.5rem;
+    list-style: none;
+
+    li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p{
+            cursor: pointer;
+        }
+
+        .rotated {
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+
+        .selected + .rotated {
+            transform: rotate(270deg);
+            transition: transform 0.3s ease;
+        }
+    }
+}

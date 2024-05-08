@@ -1,49 +1,70 @@
-import { Divisor } from "../../components/Divider"
-import styles from "./ProductDetail.module.scss"
-
+import { Divisor } from "../../components/Divider";
+import styles from "./ProductDetail.module.scss";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { LiaStarSolid } from "react-icons/lia";
 import { IoRemoveOutline } from "react-icons/io5";
 import { IoAddOutline } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
-
-import adjustments from "./image/Adjustments.svg"
-import { SectionProdutcs } from "../../components/SectionProducts";
-
-import productImage1 from "./image/productImage1.svg"
-import productImage2 from "./image/productImage2.svg"
-import productImage3 from "./image/productImage3.svg"
-import productImage4 from "./image/productImage4.svg"
+import adjustments from "./image/Adjustments.svg";
 import { ProductReview } from "../../components/ProductReview";
+import { useContext, useState } from "react";
+import { TypeContext } from "../../context/TypeProvider";
+import { useProducts } from "../../hooks/useProducts";
+import { Button } from "../../components/Button";
+import { ColorBox } from "../../components/ColorBox";
+import { ConversionReal } from "../../utils/conversion-real";
 
-export function ProductDetail(){
+const colors = {
+    green: '#00C12B',
+    red: '#F50606',
+    yellow: '#F5DD06',
+    orange: '#F57906',
+    babyBlue: '#06CAF5',
+    blue: '#063AF5',
+    purple: '#7D06F5',
+    pink: '#F506A4',
+    white: '#FFFFFF',
+    black: '#000000',
+}
 
-    const newArrivals = [
-        {
-            image: productImage1,
-            name: "Product 1",
-            valor: 10,
-            nota: 4.5
-        },
-        {
-            image: productImage2,
-            name: "Product 2",
-            valor: 20,
-            nota: 4.2
-        },
-        {
-            image: productImage3,
-            name: "Product 3",
-            valor: 15,
-            nota: 4.7
-        },
-        {
-            image: productImage4,
-            name: "Product 4",
-            valor: 25,
-            nota: 4.8
+
+export function ProductDetail() {
+    const { id, add, productCart, setProductCart} = useContext(TypeContext);
+    const { data } = useProducts();
+    const [ selectedSize , setSelectedSize] = useState<string>();
+    const [selectedColor, setSelectedColor] = useState<string>();
+    const [ quantity, setQuantity ] = useState<number>(0)
+    
+    const selectedProduct = data?.find((product) => product.id === id);
+
+    const valorInReais = selectedProduct ? ConversionReal(selectedProduct.price) : 0;
+
+
+    const handleChangeFilterSize = (size: string) => {
+        setSelectedSize(size)
+    }
+
+    const handleChangeSelectedColor = (color: string) => {
+        setSelectedColor(color)
+    }
+
+    const handleChangeAddCart = () => {
+        if (selectedProduct && selectedSize && selectedColor) {
+            setProductCart(productCart + 1);
+    
+            add({
+                idCart: productCart,
+                name: selectedProduct.name,
+                image: selectedProduct.image_url[0],
+                price: selectedProduct.price,
+                quantity: quantity,
+                size: selectedSize,
+                color: selectedColor,
+                id: selectedProduct.id
+            });
         }
-    ];
+    
+    }
 
     return(
         <div className={styles.productDetail}>
@@ -82,18 +103,18 @@ export function ProductDetail(){
                 <div className={styles.mainImg}>
 
                 </div>
-               
+            
                 <div className={styles.descriptionProduct}>
-                    <h1>ONE LIFE GRAPHIC T-SHIRT</h1>
+                    <h1>{selectedProduct?.name}</h1>
                     <div className={styles.evaluention}>
                         <LiaStarSolid  className={styles.star}/>
                         <LiaStarSolid className={styles.star}/>
                         <LiaStarSolid className={styles.star}/>
                         <LiaStarSolid className={styles.star}/>
-                        <p>4.5/5</p>
+                        <p>{selectedProduct?.quality}</p>
                     </div>
                     <div className={styles.value}>
-                        <p>$260</p>
+                        <p>${valorInReais}</p>
                     </div>
                     <div className={styles.description}>
                         <p>This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.</p>
@@ -102,30 +123,53 @@ export function ProductDetail(){
                     <div className={styles.selectColor}>
                         <h2>Select Color</h2>
                         <div className={styles.color}>
-                            <div className={styles.color1}></div>
-                            <div className={styles.color2}></div>
-                            <div className={styles.color3}></div>
+                            {
+                                selectedProduct?.color.map((color, index) => (
+                                    <ColorBox
+                                        key={index}
+                                        style={{backgroundColor: colors[color as keyof typeof colors]}}
+                                        onClick={() => handleChangeSelectedColor(color)}
+                                        classeName={selectedColor === color ? styles.selectedColor : ""}
+                                    />
+                                ))
+                            }
                         </div>
                     </div>
                     <Divisor />
                     <div className={styles.chooseSize}>
                         <h2>Choose Size</h2>
                         <div className={styles.size}>
-                            <button>Small</button>
-                            <button>Medium</button>
-                            <button>Large</button>
-                            <button>X-Large</button>
+                            {
+                                selectedProduct?.size.map((size, index) => (
+                                    <Button 
+                                        key={index}
+                                        text={size}
+                                        onClick={() => handleChangeFilterSize(size)} 
+                                        className={selectedSize === size ? styles.selected : ''}
+                                    />
+                                ))
+                            }
                         </div>
                     </div>
                     <Divisor />
                     <div className={styles.cart}>
                         <div className={styles.quantidadeProduto}>
-                            <button><IoAddOutline className={styles.quant}/></button>
-                            <p>1</p>
-                            <button><IoRemoveOutline className={styles.quant}/></button>
+                            <button><IoAddOutline 
+                                className={styles.quant}
+                                onClick={() => setQuantity(quantity + 1)}
+                            /></button>
+                            <p>{quantity}</p>
+                            <button><IoRemoveOutline 
+                                className={styles.quant}
+                                onClick={() => setQuantity(quantity -1)}
+                            /></button>
                         </div>
 
-                        <button className={styles.addCart}>Add to Cart</button>
+                        <button
+                            className={styles.addCart}
+                            onClick={() => handleChangeAddCart()}
+                            >Add to Cart
+                        </button>
                     </div>
                 </div>
             </section>
@@ -167,11 +211,6 @@ export function ProductDetail(){
                     <button className={styles.loadReviews}>Load More Reviews</button>
                 </div>
             </section>
-
-            <SectionProdutcs 
-                title="YOU MIGHT ALSO LIKE"
-                products={newArrivals}
-            />
             
         </div>
     )

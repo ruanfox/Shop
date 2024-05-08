@@ -4,7 +4,6 @@ import styles from "./StyleProducts.module.scss"
 import { TypeContext } from "../../context/TypeProvider";
 import { useContext } from "react";
 
-
 export function StyleProducts(){
     const {setType } = useContext(TypeContext);
     

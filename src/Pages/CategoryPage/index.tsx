@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ContainerProducts } from "../../components/ContainerProducts/ContainerProducts";
+import { ContainerProducts } from "../../components/ContainerProducts";
 import { Divisor } from "../../components/Divider"
 import { FilterProducts } from "../../components/FilterProducts"
 
@@ -11,15 +11,16 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { TypeContext } from "../../context/TypeProvider";
 
 const styleProduct ={
-    0: 'Casual',
-    1: 'Formal',
-    2: 'Party',
-    3: 'Gym'
+    0:'',
+    1: 'Casual',
+    2: 'Formal',
+    3: 'Party',
+    4: 'Gym'
 }
 
 export function CategoryPage() {
     const {type} = useContext(TypeContext);
-
+    
     return(
         <div className={styles.categoryPage}>
             <Divisor />
@@ -38,7 +39,9 @@ export function CategoryPage() {
                         <h1>{styleProduct[type]}</h1>
                         <p>Showing 1-10 of 100 Products Sort by: Most Popular</p>
                     </div>
-                    <ContainerProducts />
+                    <div className={styles.containerProducts1}>
+                        <ContainerProducts />
+                    </div>
                     <Divisor />
                     <section className={styles.pagination}>
                         <button className={styles.previous}>

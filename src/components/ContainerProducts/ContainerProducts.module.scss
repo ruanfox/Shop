@@ -1,13 +1,12 @@
 .containerProducts{
     width: 100%;
-    //height: 81rem;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;  
-    gap: 1.2rem;
+    flex-wrap: wrap;
     align-items: flex-start;
+    gap: 1.2rem;
 }
 
 .containerProducts > * {
-    margin-bottom: 2.2rem;
+    margin-bottom: 1rem;
 }
