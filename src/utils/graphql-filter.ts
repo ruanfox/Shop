@@ -101,47 +101,27 @@ export function useGetApplyFilter(){
 
 export const MountQuery = () => {
     const type = useGetCategoryByType();
-    const color = useGetFilterColor()();
-    const size = useGetFilterSize()();
-    const clothing = useGetFilterClothing()();
-    const useApplyFilter = useGetApplyFilter();
+    //const color = useGetFilterColor()();
+    //const size = useGetFilterSize()();
+    //const clothing = useGetFilterClothing()();
+    //const useApplyFilter = useGetApplyFilter();
     //const priceMin = useGetPriceMin();
     //const priceMax = useGetPriceMax();
     console.log()
    
-    if (color != "none" || size != "none" || clothing != "none" && useApplyFilter) {
-        return`
-            query {
-                products(style: "${type}", color: "${color}", size: "${size}", clothing: "${clothing}") {
-                id
-                name
-                quality
-                price
-                image_url
-                style
-                size
-                color
-                quality
-                }
-            }
-        `;
-    }else{
-        if(useApplyFilter){
-            return`
-                query {
-                    products(style: "${type}"){
-                    id
-                    name
-                    quality
-                    price
-                    image_url
-                    style
-                    size
-                    color
-                    quality
-                    }
-                }
-            `;
+    return`
+    query {
+        products(style: "${type}"){
+        id
+        name
+        quality
+        price
+        image_url
+        style
+        size
+        color
+        quality
         }
     }
+    `;
 }

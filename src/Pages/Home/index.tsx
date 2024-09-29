@@ -3,47 +3,33 @@ import styles from "./Home.module.scss";
 
 import { SectionProdutcs } from "../../components/SectionProducts";
 
-
-import productImage1 from "./image/productImage1.svg"
-import productImage2 from "./image/productImage2.svg"
-import productImage3 from "./image/productImage3.svg"
-import productImage4 from "./image/productImage4.svg"
-
 import { StyleProducts } from "../../components/StyleProducts";
 import { FilterBrands } from "../../components/FilterBrands";
 import { Mural } from "../../components/Mural";
 import { FeedBack } from "../../components/FeedBack";
 import { Divisor } from "../../components/Divider";
+import { useProducts } from "../../hooks/useProducts";
 
 export function Home(){
 
-    const newArrivals = [
-        {
-            image: productImage1,
-            name: "Product 1",
-            valor: 10000,
-            nota: 4.5
-        },
-        {
-            image: productImage2,
-            name: "Product 2",
-            valor: 20000,
-            nota: 4.2
-        },
-        {
-            image: productImage3,
-            name: "Product 3",
-            valor: 15000,
-            nota: 4.7
-        },
-        {
-            image: productImage4,
-            name: "Product 4",
-            valor: 25000,
-            nota: 4.8
-        }
-    ];
+    const {data} = useProducts();
     
+    const lastFourNewArrivals = data?.slice(-4).map(product => ({
+        image: product.image_url[0],
+        name: product.name,
+        valor: product.price,        
+        nota: product.quality,        
+        id: product.id
+    })) || [];
+
+    const topSelling = data?.slice(3).map(product => ({
+        image: product.image_url[0], 
+        name: product.name,
+        valor: product.price,        
+        nota: product.quality,        
+        id: product.id
+    })) || [];
+
     return(
 
         <main className={styles.home}>
@@ -55,7 +41,7 @@ export function Home(){
             <div className={styles.containerMargin}>
                 <SectionProdutcs
                     title="NEW ARRIVALS"
-                    products={newArrivals}
+                    products={lastFourNewArrivals}
                 />
             </div>
             
@@ -66,7 +52,7 @@ export function Home(){
             <div className={styles.containerMargin}>
                 <SectionProdutcs 
                     title="TOP SELLING"
-                    products={newArrivals}
+                    products={topSelling}
                 />
             </div>
 

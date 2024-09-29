@@ -7,9 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export function ContainerProducts(){
     const {data} = useProducts();
-    const {type, setId} = useContext(TypeContext);
-    console.log(data)
-    console.log(type)
+    const {setId} = useContext(TypeContext);
     
     const navigate= useNavigate();
 

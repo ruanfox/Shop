@@ -211,7 +211,6 @@ export function ProductDetail() {
                     <button className={styles.loadReviews}>Load More Reviews</button>
                 </div>
             </section>
-            
         </div>
     )
 }

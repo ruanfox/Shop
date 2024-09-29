@@ -16,7 +16,7 @@ export function Cart(){
     
     useEffect(() => {
         if(amount != 0){
-            setDelivery(1500)
+            setDelivery(1000)
         }
         const total = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
         setAmount(total)
@@ -70,7 +70,7 @@ export function Cart(){
                             <p>-${ConversionReal(discount)}</p>
                         </div>
                         <div>
-                            <h2>Delivery Fee</h2>
+                            <h2>Delivery</h2>
                             <p>${ConversionReal(delivery)}</p>
                         </div>
                         <Divisor />
